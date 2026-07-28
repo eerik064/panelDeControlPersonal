@@ -2,46 +2,64 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Panel</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <header>
- <h1>Bienvenido a tu panel</h1>
- <strong>Erik Edil Espindola Jimenez</strong>
- 
- </header>
+    <header>
+        <h1>Bienvenido a tu panel</h1>
+        <strong>Erik Edil Espindola Jimenez</strong>
+    </header>
 
- <nav>
- <ul>
- <li><a href="#inicio">Inicio</a></li>
- <li><a href="#tareas">Mis tareas</a></li>
- <li><a href="#perfil">Perfil</a></li>
- </ul>
- </nav>
- <main>
- <section id="tareas">
- <h2>Tareas pendientes</h2>
- <ul id="lista-tareas">
- <li>Aprender HTML semantico</li>
- <li>Planificar la base de datos</li>
- </ul>
- <button id="btn-agregar">Agregar tarea</button>
- </section>
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#tareas">Mis tareas</a></li>
+            <li><a href="#perfil">Perfil</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
 
- <section id="widgets">
- <h2>Informacion Extra</h2>
- <article id="clima-widget">
- <p>Cargando informacion del clima...</p>
- </article>
- </section>
- </main>
- 
- <footer>
-    <p><small>&copy; 2026 Erik Edil Espindola Jimenez. Todos los derechos reservados.</small></p>
-  </footer>
+    <main>
+        <section id="tareas">
+            <h2>Tareas pendientes</h2>
+            <ul id="lista-tareas">
+                <li>Aprender HTML semantico</li>
+                <li>Planificar la base de datos</li>
+            </ul>
+            <button id="btn-agregar">Agregar tarea</button>
+        </section>
+
+        <section id="widgets">
+            <h2>Informacion Extra</h2>
+            <article id="clima-widget">
+                <p>Cargando informacion del clima...</p>
+            </article>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+                <button type="submit">Enviar mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p><small>&copy; 2026 Erik Edil Espindola Jimenez. Todos los derechos reservados.</small></p>
+    </footer>
 </body>
 
 </html>
