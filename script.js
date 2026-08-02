@@ -16,3 +16,12 @@ function modeSwitch() {
 }
 
 buttontoggle.addEventListener("click", modeSwitch);
+
+const botonMenu = document.querySelector("#btn-menu");
+const menu = document.querySelector("nav ul");
+
+function alternarMenu() {
+    menu.classList.toggle("abierto");
+}
+
+botonMenu.addEventListener("click", alternarMenu);

@@ -6,6 +6,19 @@ body {
     padding: 0;
 }
 
+.hamburguesa {
+    display: flex;
+    margin: 0 auto 8px;
+    background-color: #2c3e50;
+    color: #cfe3d1;
+    border: 1px solid #2c3e50;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font: inherit;
+    font-weight: bold;
+    justify-content: center;
+}
+
 .button-mode {
     margin-top: 14px;
     background-color: orange;
@@ -111,6 +124,12 @@ body.light nav {
     background-color: #4d92d7;
 }
 
+body.light .hamburguesa {
+    background-color: #0a0c0a;
+    color: #ffffff;
+    border-color: #191c19;
+}
+
 body.light .tarjetas {
     background-color: rgb(76, 70, 61);
 }
@@ -124,9 +143,17 @@ body.light form label {
 }
 
 @media (max-width: 600px) {
+    #btn-menu {
+        display: block;
+    }
     nav ul {
+        display: none;
         flex-direction: column;
         align-items: center;
+        gap: 10px;
+    }
+    nav ul.abierto {
+        display: flex;
     }
     .tarjetas {
         grid-template-columns: 1fr;
