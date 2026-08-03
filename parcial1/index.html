@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Cafe El Trigal</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nuestro-cafe">Nuestro cafe</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="cafe">
+            <h2>Nuestro cafe</h2>
+            <p>Nuestros cafes estan hechos con los productos mas naturales y organicos, esto garantiza la calidad final de lo que ofrecemos a nuestros clientes.</p>
+            <ul>
+                <li>Cafe Americano - Bs 12</li>
+                <li>Capuchino - Bs 18</li>
+                <li>Submarino - Bs 15</li>
+            </ul>
+            <button id="btn-agregar ">Agregar tarea</button>
+        </section>
+
+        <section id="contacto">
+            <form>
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" required>
+
+                <label for="email">Correo electronico:</label>
+                <input type="email " id="correo" required>
+
+                <label for="mensaje ">Tu pedido:</label>
+                <textarea id="pedido" required></textarea>
+
+                <button type="button" id="btn-confirmar">Confirmar pedido</button>
+                <p id="mensaje" class="oculto"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Parcial 1 - Erik Edil Espindola Jimenez - 3 de Agosto de 2026</p>
+    </footer>
+
+    <script src="script.js "></script>
+</body>
+
+</html>
