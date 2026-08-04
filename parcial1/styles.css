@@ -1,0 +1,80 @@
+.oculto {
+    display: none;
+}
+
+body {
+    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #874D4D;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #8A5A5A;
+    padding: 15px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    margin: 10px;
+    background-color: #ffffff;
+    padding: 25px;
+    border: 1px solid #dddddd;
+    border-radius: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #874D4D;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #8A5A5A;
+    margin-top: 20px;
+    color: #dddddd;
+}
+
+button {
+    width: 200px;
+    align-self: center;
+    background-color: #f4f4f9;
+    color: #8F6F6F;
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
