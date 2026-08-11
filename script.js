@@ -31,7 +31,7 @@ const aviso = document.querySelector("#aviso");
 
 function revisarEnvio(event) {
 
-    //event.preventDefault();
+    event.preventDefault();
 
     const nombre = document.querySelector("#nombre").value;
     const email = document.querySelector("#email").value;

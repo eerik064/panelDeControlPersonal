@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Panel de Control Personal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Bienvenido a tu panel</h1>
+        <strong>Erik Edil Espindola Jimenez</strong>
+        <br>
+        <button type="button" id="btn-theme" class="button-mode">Cambio de Modo</button>
+    </header>
+
+    <nav>
+        <button type="button" id="btn-menu" class="hamburguesa">☰ Menú</button>
+        <ul>
+
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#tareas">Mis tareas</a></li>
+            <li><a href="#perfil">Perfil</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main class="tarjetas">
+        <section id="tareas">
+            <h2>Tareas pendientes</h2>
+            <ul id="lista-tareas">
+                <li>Aprender HTML semántico</li>
+                <li>Planificar la base de datos</li>
+            </ul>
+            <button id="btn-agregar">Agregar tarea</button>
+        </section>
+
+        <section id="widgets">
+            <h2>Información Extra</h2>
+            <article id="clima-widget">
+                <p>Cargando información del clima...</p>
+            </article>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <form id="form-envio" method="POST" action="procesar.php" novalidate>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+                <button type="submit">Enviar mensaje</button>
+                <p id="aviso" class="aviso"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p><small>&copy; 2026 Panel de Control Personal. Todos los derechos reservados.</small></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
