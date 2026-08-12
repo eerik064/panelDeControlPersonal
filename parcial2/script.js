@@ -4,7 +4,7 @@ const aviso = document.querySelector("#aviso-helados");
 function revisarEnvio(event) {
     const nombre = document.querySelector("#nombre").value;
     const correo = document.querySelector("#correo").value;
-    const mensaje = document.querySelector("#sabores").value;
+    const sabores = document.querySelector("#sabores").value;
 
     if (nombre === "") {
         event.preventDefault();
@@ -16,13 +16,13 @@ function revisarEnvio(event) {
         aviso.textContent = "Ese correo no tiene arroba - revísalo por favor.";
         aviso.classList.add("error");
         aviso.classList.remove("exito");
-    } else if (mensaje === "") {
+    } else if (sabores === "") {
         event.preventDefault();
         aviso.textContent = "Ingrese el sabor que desea";
         aviso.classList.add("error");
         aviso.classList.remove("exito");
     } else {
-        aviso.textContent = "Mensaje enviado exitosamente.";
+        aviso.textContent = "Erik Edil Espindola Jimenez.";
         aviso.classList.add("exito");
         aviso.classList.remove("error");
     }
