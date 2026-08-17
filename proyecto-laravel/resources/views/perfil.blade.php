@@ -17,8 +17,8 @@
             <div class="mt-8 bg-gray-50 p-4 rounded-lg border border-gray-100 text-left">
                 <h3 class="text-lg font-semibold text-gray-800 mb-2">Detalles de la cuenta</h3>
                 <p class="text-sm text-gray-600 mb-1"><strong>Correo:</strong> {{ $usuario->email }}</p>
-                <p class="text-sm text-gray-600 mb-1"><strong>Rol:</strong> {{ $usuario->rol ?? 'Usuario' }}</p>
-                <p class="text-sm text-gray-600"><strong>Estado:</strong> {{ $usuario->estado ?? 'Activo' }}</p>
+                <p class="text-sm text-gray-600 mb-1"><strong>Rol:</strong> {{ $usuario->rol ?? 'Sin rol' }}</p>
+                
             </div>
         </div>
 

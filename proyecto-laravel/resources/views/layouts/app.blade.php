@@ -13,7 +13,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
             <div>
                 <h1 class="text-2xl font-bold text-gray-900">Bienvenido a tu panel</h1>
-                <strong class="text-indigo-600">Erik Edil Espindola Jimenez</strong>
+                <strong class="text-indigo-600">{{auth()->user()->name}}</strong>
             </div>
         </div>
     </header>
@@ -35,6 +35,15 @@
                 <li><a href="{{ route('tareas') }}" class="block hover:bg-indigo-700 px-3 py-2 rounded-md text-sm font-medium transition">Mis tareas</a></li>
                 <li><a href="{{ route('perfil') }}" class="block hover:bg-indigo-700 px-3 py-2 rounded-md text-sm font-medium transition">Perfil</a></li>
                 <li><a href="{{ route('contacto') }}" class="block hover:bg-indigo-700 px-3 py-2 rounded-md text-sm font-medium transition">Contacto</a></li>
+
+                <li class="w-full sm:w-auto sm:ml-auto">
+                    <form action="{{ route('logout') }}" method="POST" class="m-0">
+                        @csrf
+                        <button type="submit" class="block hover:bg-indigo-700 px-3 py-2 rounded-md text-sm font-medium transition">
+                            Cerrar sesión
+                        </button>
+                    </form>
+                </li>
             </ul>
 
         </div>

@@ -17,6 +17,7 @@
             @csrf
             
             <div>
+                <input type="hidden" id="id_user" name="id_user" value="{{ Auth::user()->id }}">
                 <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre:</label>
                
                 <input type="text" id="nombre" name="nombre" value="{{ old('nombre') }}" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 outline-none transition @error('nombre') border-red-500 @enderror">

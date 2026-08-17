@@ -11,6 +11,7 @@ class Contacto extends Model
 
     // Campos permitidos para guardar masivamente
     protected $fillable = [
+        'id_user',
         'nombre',
         'email',
         'mensaje',
