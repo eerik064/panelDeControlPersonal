@@ -70,9 +70,25 @@ class TareaController extends Controller
         
         $request->validate([
             'descripcion' => 'required|string|max:255',
-            'fecha_vencimiento' => 'nullable|date',
-            'prioridad' => 'nullable|in:Baja,Media,Alta',
-            'categoria' => 'nullable|in:Trabajo,Casa,Formacion',
+            'fecha_vencimiento' => 'required|date',
+            'prioridad' => 'required|in:Baja,Media,Alta',
+            'categoria' => 'required|in:Trabajo,Casa,Formacion',
+        ], [
+            
+            'descripcion.required' => 'La descripción es obligatoria.',
+            'descripcion.max' => 'La descripción no puede tener más de 255 caracteres.',
+            
+           
+            'fecha_vencimiento.required' => 'La fecha de vencimiento es obligatoria.',
+            'fecha_vencimiento.date' => 'La fecha de vencimiento debe ser una fecha válida.',
+            
+            
+            'prioridad.required' => 'Debes seleccionar una prioridad.',
+            'prioridad.in' => 'La prioridad seleccionada no es válida.',
+            
+           
+            'categoria.required' => 'Debes seleccionar una categoría.',
+            'categoria.in' => 'La categoría seleccionada no es válida.',
         ]);
 
     

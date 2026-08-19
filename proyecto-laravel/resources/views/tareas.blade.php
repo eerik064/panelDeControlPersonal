@@ -5,11 +5,11 @@
 @section('content')
     <section id="tareas" class="max-w-5xl mx-auto py-6">
         
-        <!-- Encabezado con Botón de Historial -->
+       
         <div class="flex flex-col sm:flex-row justify-between items-center mb-8 border-b border-gray-200 pb-4 gap-4">
             <h2 class="text-3xl font-extrabold text-gray-800 tracking-tight">Mis Tareas</h2>
             
-            <!-- NUEVO: Botón para ver el historial -->
+           
             <a href="{{ route('tareas.historial') }}" class="flex items-center gap-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-semibold py-2 px-4 rounded-lg transition-colors duration-200">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 Ver Historial Completadas
@@ -23,7 +23,24 @@
             </div>
         @endif
 
-        <!-- Formulario Estilizado -->
+        @if($errors->any())
+            <div class="bg-red-50 border-l-4 border-red-500 text-red-700 p-4 rounded-r-lg mb-6 shadow-sm flex flex-col gap-2">
+                <div class="flex items-center gap-3 font-semibold">
+                    <!-- Icono de X (Error) -->
+                    <svg class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span>Por favor, corrige los siguientes errores:</span>
+                </div>
+                <ul class="list-disc list-inside ml-8 text-sm">
+                    @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+       
         <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 mb-8">
             <h3 class="text-lg font-semibold text-gray-700 mb-4">Añadir nueva tarea</h3>
             <form action="{{ route('tareas.store') }}" method="POST">
@@ -72,7 +89,7 @@
             </form>
         </div>
 
-        <!-- Filtros Estilizados -->
+        
         <div class="mb-8">
             <form action="{{ route('tareas') }}" method="GET" class="flex flex-col sm:flex-row gap-3 items-center bg-gray-50 p-3 rounded-xl border border-gray-200">
                 <div class="w-full sm:w-auto flex-grow flex items-center gap-2">
@@ -114,7 +131,7 @@
             </form>
         </div>
 
-        <!-- Lista de Tareas -->
+       
         <ul id="lista-tareas" class="space-y-4 text-base">
             @forelse($tareas as $tarea)
                 @php
