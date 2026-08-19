@@ -6,16 +6,36 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    /**
+     * Run the migrations.
+     */
     public function up(): void
     {
         Schema::create('tareas', function (Blueprint $table) {
+            
             $table->id();
-            $table->string('descripcion'); // Ej: "Aprender HTML semántico"
-            $table->boolean('completada')->default(false); // Para saber si está lista o pendiente
-            $table->timestamps(); // Crea created_at y updated_at
+
+            $table->unsignedBigInteger('id_user'); 
+  
+            $table->enum('categoria', ['Casa', 'Trabajo', 'Formacion']); 
+         
+            $table->string('descripcion', 255); 
+            
+            $table->boolean('completada')->default(0); 
+            
+            $table->enum('prioridad', ['Baja', 'Media', 'Alta']); 
+         
+            $table->timestamp('fecha_vencimiento'); 
+    
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->nullable();
+
         });
     }
 
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
         Schema::dropIfExists('tareas');

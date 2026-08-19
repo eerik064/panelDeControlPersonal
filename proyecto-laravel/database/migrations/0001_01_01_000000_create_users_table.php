@@ -10,21 +10,17 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name'); // Ej: "Erik Edil Espindola Jimenez"
+            $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            
-            // Campos extra para tu vista de Perfil
-            $table->string('profesion')->nullable(); // Ej: "Técnico Superior en Sistemas Informáticos"
-            $table->string('rol')->default('Usuario'); // Ej: "Administrador"
-            $table->string('estado')->default('Activo'); // Ej: "Activo" o "Inactivo"
+            $table->string('rol');
+            $table->string('estado')->default('1'); 
             
             $table->rememberToken();
             $table->timestamps();
         });
 
-        // (Las tablas de password_reset_tokens y sessions que vienen por defecto déjalas igual)
     }
 
     public function down(): void

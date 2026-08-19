@@ -9,14 +9,16 @@ class Tarea extends Model
 {
     use HasFactory;
 
-    // Campos permitidos para guardar masivamente
     protected $fillable = [
         'id_user',
         'descripcion',
         'completada',
+        'fecha_vencimiento', 
+        'prioridad',         
+        'categoria'
     ];
 
-    // Convertir el valor a un tipo específico automáticamente
+
     protected function casts(): array
     {
         return [

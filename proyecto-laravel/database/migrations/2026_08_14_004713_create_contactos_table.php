@@ -10,9 +10,12 @@ return new class extends Migration
     {
         Schema::create('contactos', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_user')
+                  ->constrained('users')
+                  ->onDelete('cascade');
             $table->string('nombre');
             $table->string('email');
-            $table->text('mensaje'); // Usamos text() porque el mensaje puede ser largo
+            $table->text('mensaje'); 
             $table->timestamps();
         });
     }
